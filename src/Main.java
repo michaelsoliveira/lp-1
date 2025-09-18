@@ -24,6 +24,22 @@ public class Main {
         } while (opcao != 0);
     }
 
+    public static void cadastrarFuncionario() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("====== CADASTRO DE FUNCIONÁRIO ======");
+        System.out.print("Entre com o nome: ");
+        String nome = sc.nextLine();
+        System.out.print("Entre com o rg: ");
+        String rg = sc.nextLine();
+        System.out.print("Entre com o cpf: ");
+        String cpf = sc.nextLine();
+        System.out.print("Entre com o salário: ");
+        double salario = sc.nextDouble();
+        Funcionario funcionario = new Funcionario(cpf, nome, rg, salario);
+        System.out.println("Funcionário + " + funcionario.getNome() +
+        " cadastrado com sucesso!");
+    }
+
     public static void cadastrarCliente() {
         Scanner sc = new Scanner(System.in);
         System.out.println("====== SISTEMA BANCÁRIO ======");
