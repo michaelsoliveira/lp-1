@@ -10,8 +10,11 @@ public class Main {
         String rg = sc.nextLine();
         System.out.print("Entre com o cpf: ");
         String cpf = sc.nextLine();
+        System.out.print("Entre com sua profissão: ");
+        String profissao = sc.nextLine();
 
-        Pessoa titular = new Pessoa(cpf, nome, rg);   
+
+        Cliente titular = new Cliente(cpf, nome, rg, profissao);   
 
         System.out.print("Entre com o número da conta: ");
         int numero = sc.nextInt();
