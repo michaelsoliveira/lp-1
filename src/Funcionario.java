@@ -1,4 +1,4 @@
-public class Funcionario extends Pessoa {
+public abstract class Funcionario extends Pessoa {
     private double salario;
     
     public Funcionario(String cpf, String nome, String rg, double salario) {
@@ -14,8 +14,6 @@ public class Funcionario extends Pessoa {
         this.salario = salario;
     }
 
-    public double getBonificacao() {
-        return this.salario * 0.10;
-    }
+    public abstract double getBonificacao();
 
 }

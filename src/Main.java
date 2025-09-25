@@ -11,6 +11,9 @@ public class Main {
             System.out.println("3 - Listar Clientes");
             System.out.println("4 - Listar Funcionários");
 
+            System.out.print("Escolha uma opção: ");
+            opcao = sc.nextInt();
+
             switch(opcao) {
                 case 1: 
                     cadastrarCliente();
@@ -26,7 +29,7 @@ public class Main {
 
     public static void cadastrarFuncionario() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("====== CADASTRO DE FUNCIONÁRIO ======");
+        System.out.println("====== CADASTRO DO GERENTE ======");
         System.out.print("Entre com o nome: ");
         String nome = sc.nextLine();
         System.out.print("Entre com o rg: ");
@@ -35,7 +38,7 @@ public class Main {
         String cpf = sc.nextLine();
         System.out.print("Entre com o salário: ");
         double salario = sc.nextDouble();
-        Funcionario funcionario = new Funcionario(cpf, nome, rg, salario);
+        Funcionario funcionario = new Gerente(cpf, nome, rg, salario);
         System.out.println("Funcionário + " + funcionario.getNome() +
         " cadastrado com sucesso!");
     }
@@ -52,8 +55,21 @@ public class Main {
         String cpf = sc.nextLine();
         System.out.print("Entre com sua profissão: ");
         String profissao = sc.nextLine();
+        System.out.println("===== Entre com o seu Endereço ===== ");
+        System.out.print("Logradouro: ");
+        String logradouro = sc.nextLine();
+        System.out.print("Bairro: ");
+        String bairro = sc.nextLine();
+        System.out.print("Cidade: ");
+        String cidade = sc.nextLine();
+        System.out.print("Estado: ");
+        String estado = sc.nextLine();
+        System.out.print("CEP: ");
+        String cep = sc.nextLine();
 
-        Cliente titular = new Cliente(cpf, nome, rg, profissao);   
+        Endereco endereco = new Endereco(logradouro, logradouro, bairro, cidade, estado, cep);
+
+        Cliente titular = new Cliente(cpf, nome, rg, profissao, endereco);   
 
         System.out.print("Entre com o número da conta: ");
         int numero = sc.nextInt();
