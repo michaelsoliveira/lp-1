@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static List<Cliente> clientes = new ArrayList<>();
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcao = -1;
@@ -43,6 +46,20 @@ public class Main {
         " cadastrado com sucesso!");
     }
 
+    public static void listarClientes() {
+        System.out.println("====== LISTA DE CLIENTES ======");
+        if (clientes.isEmpty()) {
+            System.out.println("Nenhum cliente cadastrado.");
+        } else {
+            int i = 1;
+            for (Cliente cliente : clientes) {
+                System.out.println(i + " - " + cliente.getNome() +
+                    " | CPF: " + cliente.getCpf() +
+                    " | Profissão: " + cliente.getProfissao());
+            }
+        }
+    }
+
     public static void cadastrarCliente() {
         Scanner sc = new Scanner(System.in);
         
@@ -70,6 +87,7 @@ public class Main {
         Endereco endereco = new Endereco(logradouro, logradouro, bairro, cidade, estado, cep);
 
         Cliente titular = new Cliente(cpf, nome, rg, profissao, endereco);   
+        clientes.add(titular);
 
         System.out.print("Entre com o número da conta: ");
         int numero = sc.nextInt();
