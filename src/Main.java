@@ -42,6 +42,7 @@ public class Main {
 
     public static void cadastrarCliente() {
         Scanner sc = new Scanner(System.in);
+        
         System.out.println("====== SISTEMA BANCÁRIO ======");
         System.out.print("Entre com o seu nome: ");
         String nome = sc.nextLine();
@@ -51,7 +52,6 @@ public class Main {
         String cpf = sc.nextLine();
         System.out.print("Entre com sua profissão: ");
         String profissao = sc.nextLine();
-
 
         Cliente titular = new Cliente(cpf, nome, rg, profissao);   
 
