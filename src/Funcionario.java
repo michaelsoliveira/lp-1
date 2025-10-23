@@ -1,8 +1,8 @@
 public abstract class Funcionario extends Pessoa {
     private double salario;
     
-    public Funcionario(String cpf, String nome, String rg, double salario) {
-        super(cpf, nome, rg);
+    public Funcionario(String cpf, String nome, String rg, double salario, String profissao) {
+        super(cpf, nome, rg, profissao);
         this.salario = salario;
     }
 

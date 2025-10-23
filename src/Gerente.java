@@ -1,7 +1,7 @@
 public class Gerente extends Funcionario {
 
-    public Gerente(String cpf, String nome, String rg, double salario) {
-        super(cpf, nome, rg, salario);
+    public Gerente(String cpf, String nome, String rg, double salario, String profissao) {
+        super(cpf, nome, rg, salario, profissao);
     }
 
     @Override

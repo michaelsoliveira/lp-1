@@ -1,7 +1,7 @@
 public class Presidente extends Funcionario {
 
-    public Presidente(String cpf, String nome, String rg, double salario) {
-        super(cpf, nome, rg, salario);
+    public Presidente(String cpf, String nome, String rg, double salario, String profissao) {
+        super(cpf, nome, rg, salario, profissao);
     }
 
     @Override

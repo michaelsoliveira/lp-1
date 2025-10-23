@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     private static List<Cliente> clientes = new ArrayList<>();
+    private static List<Funcionario> funcionarios = new ArrayList<>();
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcao = -1;
@@ -24,6 +25,13 @@ public class Main {
                 case 2:
                     cadastrarFuncionario();
                     break;
+                case 3:
+                    listarClientes();
+                    break;
+                case 4: {
+                    listarFuncionarios();
+                    break;
+                }
                 default:
                     System.out.println("Opção Inválida");
             }
@@ -39,9 +47,12 @@ public class Main {
         String rg = sc.nextLine();
         System.out.print("Entre com o cpf: ");
         String cpf = sc.nextLine();
+        System.out.print("Entre com a profissão: ");
+        String profissao = sc.nextLine();
         System.out.print("Entre com o salário: ");
         double salario = sc.nextDouble();
-        Funcionario funcionario = new Gerente(cpf, nome, rg, salario);
+        Funcionario funcionario = new Gerente(cpf, nome, rg, salario, profissao);
+        funcionarios.add(funcionario);
         System.out.println("Funcionário + " + funcionario.getNome() +
         " cadastrado com sucesso!");
     }
@@ -56,6 +67,22 @@ public class Main {
                 System.out.println(i + " - " + cliente.getNome() +
                     " | CPF: " + cliente.getCpf() +
                     " | Profissão: " + cliente.getProfissao());
+            }
+        }
+    }
+
+    public static void listarFuncionarios() {
+        System.out.println("====== LISTA DE FUNCIONÁRIOS ======");
+        if (funcionarios.isEmpty()) {
+            System.out.println("Nenhum funcionário cadastrado.");
+        } else {
+            int i = 1;
+            for (Funcionario funcionario : funcionarios) {
+                System.out.println(i + " - " + funcionario.getNome() +
+                    " | CPF: " + funcionario.getCpf() +
+                    " | Profissão: " + funcionario.getProfissao() +
+                    " | Salário: " + funcionario.getSalario() +
+                    " | Tipo: " + funcionario.getClass().getName());
             }
         }
     }

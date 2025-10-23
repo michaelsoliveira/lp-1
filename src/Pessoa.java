@@ -2,11 +2,13 @@ public abstract class Pessoa {
     private String nome;
     private String rg;
     private String cpf;
+    private String profissao;
 
-    public Pessoa(String cpf, String nome, String rg) {
+    public Pessoa(String cpf, String nome, String rg, String profissao) {
         this.cpf = cpf;
         this.nome = nome;
         this.rg = rg;
+        this.profissao = profissao;
     }
 
     public String getNome() {
@@ -28,5 +30,11 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    
+    public String getProfissao() {
+        return profissao;
+    }
+
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
 }
