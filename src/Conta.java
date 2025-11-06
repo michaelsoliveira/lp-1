@@ -1,4 +1,4 @@
-public class Conta {
+public class Conta implements OperacoesBancarias {
     private int numero;
     private double saldo;
     private double limite;
@@ -35,7 +35,7 @@ public class Conta {
         this.limite = valor;
     }
 
-    public boolean transfere(Conta destino, double valor) {
+    public boolean transferir(Conta destino, double valor) {
         if (this.saldo + this.limite >= valor) {
             this.saldo -= valor;
             destino.deposita(valor);
@@ -45,5 +45,17 @@ public class Conta {
             System.out.println("Saldo insuficiente para realizar a transferência.");
             return false;
         }
+    }
+
+    @Override
+    public void sacar(double valor) {
+        if (valor <= this.saldo) {
+            this.saldo -= valor;
+        }
+    }
+
+    @Override
+    public void depositar(double valor) {
+        this.saldo += valor;
     }   
 }
